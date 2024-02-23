@@ -47,4 +47,43 @@ public class CarListTest {
     public void whenAddedNewElementByWrongNoAbsIndex() {
         carList.add(car, -1);
     }
+
+    @Test
+    public void whenRemoveCar() {
+        carList.add(car);
+        assertTrue(carList.remove(car));
+        assertEquals(100, carList.size());
+
+        assertTrue(carList.remove(new Car("Brand0", 0)));
+        assertEquals(99, carList.size());
+    }
+
+    @Test
+    public void whenRemoveWrongCar() {
+        assertFalse(carList.remove(car));
+        assertEquals(100, carList.size());
+
+        assertFalse(carList.remove(new Car("Brand101", 101)));
+        assertEquals(100, carList.size());
+    }
+
+    @Test
+    public void whenRemoveCarByIndex() {
+        carList.add(car);
+        assertTrue(carList.removeAt(100));
+        assertEquals(100, carList.size());
+
+        assertTrue(carList.removeAt(99));
+        assertEquals(99, carList.size());
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void whenRemoveCarByWrongAbsIndex() {
+        carList.removeAt(101);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void whenRemoveCarByWrongNoAbsIndex() {
+        carList.removeAt(-1);
+    }
 }
