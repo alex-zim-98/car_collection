@@ -60,18 +60,25 @@ public class CarLinkedList implements CarList {
 
     @Override
     public boolean remove(Car car) {
-        Node node = first;
-        for (int i = 0; i < size; i++) {
-            if (node.value.equals(car))
-                return removeAt(i);
-            node = node.next;
-        }
+        int position = findElement(car);
+        if (position != -1)
+            return removeAt(position);
         return false;
     }
 
     @Override
     public boolean contains(Car car) {
-        return false;
+        return findElement(car) != -1;
+    }
+
+    private int findElement(Car car) {
+        Node node = first;
+        for (int i = 0; i < size; i++) {
+            if (node.value.equals(car))
+                return i;
+            node = node.next;
+        }
+        return -1;
     }
 
     @Override
