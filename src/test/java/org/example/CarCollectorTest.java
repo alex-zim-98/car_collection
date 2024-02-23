@@ -18,8 +18,14 @@ public class CarCollectorTest {
 
     @Test
     public void whenAddNewElement() {
-        assertTrue(carCollector.add(new Car("Brand 100", 100)));
+        assertTrue(carCollector.add(new Car("Brand100", 100)));
         assertEquals(101, carCollector.size());
+    }
+
+    @Test
+    public void whenRemoveElement() {
+        assertTrue(carCollector.remove(new Car("Brand0", 0)));
+        assertEquals(99, carCollector.size());
     }
 
 }
