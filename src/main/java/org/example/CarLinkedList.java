@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Iterator;
+
 public class CarLinkedList implements CarList {
     private Node first;
     private Node last;
@@ -7,7 +9,7 @@ public class CarLinkedList implements CarList {
     private int size = 0;
 
     @Override
-    public void add(Car car) {
+    public boolean add(Car car) {
         if (size == 0) {
             first = new Node(null, car, null);
             last = first;
@@ -17,10 +19,11 @@ public class CarLinkedList implements CarList {
             secondLast.next = last;
         }
         size++;
+        return true;
     }
 
     @Override
-    public void add(Car car, int index) {
+    public boolean add(Car car, int index) {
         if (index < 0 || index > size)
             throw new IndexOutOfBoundsException();
         Node nextNode = getNode(index);
@@ -33,6 +36,7 @@ public class CarLinkedList implements CarList {
             first = newNode;
         }
         size++;
+        return true;
     }
 
     @Override
@@ -58,13 +62,25 @@ public class CarLinkedList implements CarList {
 
     @Override
     public boolean remove(Car car) {
+        int position = findElement(car);
+        if (position != -1)
+            return removeAt(position);
+        return false;
+    }
+
+    @Override
+    public boolean contains(Car car) {
+        return findElement(car) != -1;
+    }
+
+    private int findElement(Car car) {
         Node node = first;
         for (int i = 0; i < size; i++) {
             if (node.value.equals(car))
-                return removeAt(i);
+                return i;
             node = node.next;
         }
-        return false;
+        return -1;
     }
 
     @Override
@@ -92,6 +108,24 @@ public class CarLinkedList implements CarList {
         first = null;
         last = null;
         size = 0;
+    }
+
+    @Override
+    public Iterator<Car> iterator() {
+        return new Iterator<Car>() {
+            Node node = first;
+            @Override
+            public boolean hasNext() {
+                return node != null;
+            }
+
+            @Override
+            public Car next() {
+                Car car = node.value;
+                node = node.next;
+                return car;
+            }
+        };
     }
 
     private static class Node {

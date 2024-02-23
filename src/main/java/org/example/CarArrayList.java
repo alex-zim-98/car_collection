@@ -1,26 +1,29 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class CarArrayList implements CarList {
     private Car[] array = new Car[10];
     private int size = 0;
 
     @Override
-    public void add(Car car) {
+    public boolean add(Car car) {
         increaseArray();
         array[size] = car;
         size++;
+        return true;
     }
 
     @Override
-    public void add(Car car, int index) {
+    public boolean add(Car car, int index) {
         if (index < 0 || index > size)
             throw new IndexOutOfBoundsException();
         increaseArray();
         System.arraycopy(array, index, array, index + 1, size - index);
         array[index] = car;
         size++;
+        return true;
     }
 
     private void increaseArray() {
@@ -44,11 +47,23 @@ public class CarArrayList implements CarList {
 
     @Override
     public boolean remove(Car car) {
+        int position = findElement(car);
+        if (position != -1)
+            return removeAt(position);
+        return false;
+    }
+
+    @Override
+    public boolean contains(Car car) {
+        return findElement(car) != -1;
+    }
+
+    private int findElement(Car car) {
         for (int i = 0; i < size; i++) {
             if (array[i].equals(car))
-                return removeAt(i);
+                return i;
         }
-        return false;
+        return -1;
     }
 
     @Override
@@ -66,5 +81,21 @@ public class CarArrayList implements CarList {
     public void clear() {
         array = new Car[10];
         size = 0;
+    }
+
+    @Override
+    public Iterator<Car> iterator() {
+        return new Iterator<Car>() {
+            int index = 0;
+            @Override
+            public boolean hasNext() {
+                return index < size;
+            }
+
+            @Override
+            public Car next() {
+                return get(index++);
+            }
+        };
     }
 }
