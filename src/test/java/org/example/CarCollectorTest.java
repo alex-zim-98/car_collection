@@ -40,6 +40,10 @@ public class CarCollectorTest {
         assertEquals(100, carCollector.size());
     }
 
-
+    @Test
+    public void whenClear() {
+        carCollector.clear();
+        assertEquals(0, carCollector.size());
+    }
 
 }
