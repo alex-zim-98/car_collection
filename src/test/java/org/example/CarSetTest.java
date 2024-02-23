@@ -51,4 +51,10 @@ public class CarSetTest {
         assertEquals(100, carSet.size());
     }
 
+    @Test
+    public void whenClear() {
+        carSet.clear();
+        assertEquals(0, carSet.size());
+    }
+
 }
