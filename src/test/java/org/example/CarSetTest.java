@@ -46,4 +46,9 @@ public class CarSetTest {
         assertEquals(100, carSet.size());
     }
 
+    @Test
+    public void whenGetSize() {
+        assertEquals(100, carSet.size());
+    }
+
 }
