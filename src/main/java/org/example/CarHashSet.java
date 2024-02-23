@@ -83,6 +83,11 @@ public class CarHashSet implements CarSet {
         return false;
     }
 
+    @Override
+    public boolean contains(Car car) {
+        return false;
+    }
+
     private int getPosition(Car car, int arrayLength) {
         return Math.abs(car.hashCode() % arrayLength);
     }
