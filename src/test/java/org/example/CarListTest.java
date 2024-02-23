@@ -94,7 +94,7 @@ public class CarListTest {
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void whenGetDataByWrongAbsIndex() {
-        carList.get(101);
+        carList.get(102);
     }
 
     @Test

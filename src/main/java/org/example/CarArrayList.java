@@ -19,7 +19,7 @@ public class CarArrayList implements CarList {
             throw new IndexOutOfBoundsException();
         increaseArray();
         System.arraycopy(array, index, array, index + 1, size - index);
-        array[size] = car;
+        array[index] = car;
         size++;
     }
 
@@ -31,16 +31,29 @@ public class CarArrayList implements CarList {
 
     @Override
     public boolean removeAt(int index) {
-        return false;
+        checkIndex(index);
+        System.arraycopy(array, index + 1, array, index, size - 1 - index);
+        size--;
+        return true;
+    }
+
+    private void checkIndex(int index) {
+        if (index < 0 || index >= size)
+            throw new IndexOutOfBoundsException();
     }
 
     @Override
     public boolean remove(Car car) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(car))
+                return removeAt(i);
+        }
         return false;
     }
 
     @Override
     public Car get(int index) {
+        checkIndex(index);
         return array[index];
     }
 
