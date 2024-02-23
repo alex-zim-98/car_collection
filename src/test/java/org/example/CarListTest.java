@@ -86,4 +86,15 @@ public class CarListTest {
     public void whenRemoveCarByWrongNoAbsIndex() {
         carList.removeAt(-1);
     }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void whenGetDataByWrongNoAbsIndex() {
+        carList.get(-1);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void whenGetDataByWrongAbsIndex() {
+        carList.get(101);
+    }
+
 }
