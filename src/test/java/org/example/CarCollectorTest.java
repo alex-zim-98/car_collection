@@ -28,4 +28,10 @@ public class CarCollectorTest {
         assertEquals(99, carCollector.size());
     }
 
+    @Test
+    public void whenContainsElement() {
+        assertTrue(carCollector.contains(new Car("Brand0", 0)));
+        assertFalse(carCollector.contains(new Car("Brand00", 0)));
+    }
+
 }
