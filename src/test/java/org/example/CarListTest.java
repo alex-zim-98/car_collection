@@ -97,4 +97,9 @@ public class CarListTest {
         carList.get(101);
     }
 
+    @Test
+    public void whenGetSize() {
+        assertEquals(100, carList.size());
+    }
+
 }
