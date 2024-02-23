@@ -10,9 +10,16 @@ public class CarCollectorTest {
 
     @Before
     public void setUp() throws Exception {
-        carCollector = new CarLinkedList();
+        carCollector = new CarArrayList();
         for (int i = 0; i < 100; i++) {
             carCollector.add(new Car("Brand" + i, i));
+        }
+    }
+
+    @Test
+    public void iterator() {
+        for (Car car: carCollector) {
+            System.out.println(car);
         }
     }
 
