@@ -34,4 +34,12 @@ public class CarCollectorTest {
         assertFalse(carCollector.contains(new Car("Brand00", 0)));
     }
 
+
+    @Test
+    public void whenGetSize() {
+        assertEquals(100, carCollector.size());
+    }
+
+
+
 }
