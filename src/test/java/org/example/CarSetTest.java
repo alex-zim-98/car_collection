@@ -26,6 +26,7 @@ public class CarSetTest {
 
     @Test
     public void whenAddedOldElement() {
+        carSet.add(car);
         assertFalse(carSet.add(car));
         assertEquals(101, carSet.size());
     }
@@ -44,6 +45,11 @@ public class CarSetTest {
     public void whenRemovedNonExistentElement() {
         assertFalse(carSet.remove(new Car("Nothing", 0)));
         assertEquals(100, carSet.size());
+
+        assertTrue(carSet.remove(new Car("Brand30", 30)));
+        assertEquals(99, carSet.size());
+        assertFalse(carSet.remove(new Car("Brand30", 30)));
+        assertEquals(99, carSet.size());
     }
 
     @Test

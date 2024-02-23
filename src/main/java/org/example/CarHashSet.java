@@ -28,17 +28,18 @@ public class CarHashSet implements CarSet {
         Entry existedElement = dst[position];
         if (existedElement.value.equals(car))
             return false;
-        Entry last = existedElement.next;
 
-        while (last != null) {
-            if (last.value.equals(car))
+        while (true) {
+            if (existedElement.value.equals(car))
                 return false;
+            else if (existedElement.next == null) {
+                existedElement.next = new Entry(car, null);
+                return true;
+            }
             else {
-                existedElement.next = last;
-                last = last.next;
+                existedElement = existedElement.next;
             }
         }
-        return true;
     }
 
     private void increaseArray() {
@@ -56,6 +57,29 @@ public class CarHashSet implements CarSet {
 
     @Override
     public boolean remove(Car car) {
+        int position = getPosition(car, arrays.length);
+        if (arrays[position] == null) {
+            return false;
+        }
+        Entry secondLast = arrays[position];
+        Entry lastElement = secondLast.next;
+        if (secondLast.value.equals(car)) {
+            arrays[position] = lastElement;
+            size--;
+            return true;
+        }
+
+
+        while (lastElement != null) {
+            if (lastElement.value.equals(car)) {
+                secondLast.next = lastElement.next;
+                size--;
+                return true;
+            }  else {
+                secondLast = lastElement;
+                lastElement = lastElement.next;
+            }
+        }
         return false;
     }
 
