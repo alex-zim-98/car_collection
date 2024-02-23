@@ -10,7 +10,7 @@ public class CarListTest {
     Car car;
     @Before
     public void setUp() throws Exception {
-        // init
+        carList = new CarArrayList();
         car = new Car("Test", 1);
         for (int i = 0; i < 100; i++) {
             carList.add(new Car("Brand" + i, i));
