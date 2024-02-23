@@ -102,4 +102,10 @@ public class CarListTest {
         assertEquals(100, carList.size());
     }
 
+    @Test
+    public void whenClear() {
+        carList.clear();
+        assertEquals(0, carList.size());
+    }
+
 }
