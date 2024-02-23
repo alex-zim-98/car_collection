@@ -46,16 +46,23 @@ public class CarArrayList implements CarList {
 
     @Override
     public boolean remove(Car car) {
-        for (int i = 0; i < size; i++) {
-            if (array[i].equals(car))
-                return removeAt(i);
-        }
+        int position = findElement(car);
+        if (position != -1)
+            return removeAt(position);
         return false;
     }
 
     @Override
     public boolean contains(Car car) {
-        return false;
+        return findElement(car) != -1;
+    }
+
+    private int findElement(Car car) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(car))
+                return i;
+        }
+        return -1;
     }
 
     @Override
