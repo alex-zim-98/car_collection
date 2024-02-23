@@ -14,7 +14,7 @@ public class CarLinkedList implements CarList {
         } else {
             Node secondLast = last;
             last = new Node(secondLast, car, null);
-            secondLast.next = secondLast;
+            secondLast.next = last;
         }
         size++;
     }
@@ -37,11 +37,33 @@ public class CarLinkedList implements CarList {
 
     @Override
     public boolean removeAt(int index) {
-        return false;
+        Node node = getNode(index);
+        Node nextNode = node.next;
+        Node previousNode = node.previous;
+        if (nextNode != null) {
+            nextNode.previous = previousNode;
+        } else {
+            last = previousNode;
+        }
+
+        if (previousNode != null) {
+            previousNode.next = nextNode;
+        } else {
+            first = nextNode;
+        }
+
+        size--;
+        return true;
     }
 
     @Override
     public boolean remove(Car car) {
+        Node node = first;
+        for (int i = 0; i < size; i++) {
+            if (node.value.equals(car))
+                return removeAt(i);
+            node = node.next;
+        }
         return false;
     }
 
@@ -51,6 +73,8 @@ public class CarLinkedList implements CarList {
     }
 
     private Node getNode(int index) {
+        if (index < 0 || index > size)
+            throw new IndexOutOfBoundsException();
         Node node = first;
         for (int i = 0; i < index; i++) {
             node = node.next;
