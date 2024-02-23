@@ -8,12 +8,31 @@ public class CarLinkedList implements CarList {
 
     @Override
     public void add(Car car) {
-
+        if (size == 0) {
+            first = new Node(null, car, null);
+            last = first;
+        } else {
+            Node secondLast = last;
+            last = new Node(secondLast, car, null);
+            secondLast.next = secondLast;
+        }
+        size++;
     }
 
     @Override
     public void add(Car car, int index) {
-
+        if (index < 0 || index > size)
+            throw new IndexOutOfBoundsException();
+        Node nextNode = getNode(index);
+        Node previousNode = nextNode.previous;
+        Node newNode = new Node(previousNode, car, nextNode);
+        nextNode.previous = newNode;
+        if (previousNode != null) {
+            previousNode.next = newNode;
+        } else {
+            first = newNode;
+        }
+        size++;
     }
 
     @Override
@@ -52,14 +71,14 @@ public class CarLinkedList implements CarList {
     }
 
     private static class Node {
-        private Node next;
-        private Car value;
         private Node previous;
+        private Car value;
+        private Node next;
 
-        public Node(Node next, Car value, Node previous) {
-            this.next = next;
-            this.value = value;
+        public Node(Node previous, Car value, Node next) {
             this.previous = previous;
+            this.value = value;
+            this.next = next;
         }
     }
 }
