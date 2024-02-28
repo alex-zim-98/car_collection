@@ -12,7 +12,7 @@ public class CarQueueTest {
 
     @Before
     public void setUp() throws Exception {
-        // init
+        carQueue = new CarLinkedList();
         for (int i = 0; i < 10; i++) {
             carQueue.add(new Car("Brand" + i, i));
         }

@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b868f581-1a5f-4b4a-bfa5-c54bdc46cc8f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CarQueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CarQueueTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CarCollectorTest">
+  <component name="RunManager" selected="JUnit.CarQueueTest">
     <configuration name="CarCollectorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MineCollections.test" />
       <extension name="coverage">
@@ -85,7 +85,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CarListTest.whenRemoveCar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CarQueueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MineCollections.test" />
       <extension name="coverage">
         <pattern>
@@ -94,9 +94,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.CarListTest" />
-      <option name="METHOD_NAME" value="whenRemoveCar" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CarQueueTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -134,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CarQueueTest" />
         <item itemvalue="JUnit.CarCollectorTest" />
         <item itemvalue="JUnit.CarSetTest" />
         <item itemvalue="JUnit.CarSetTest.whenAddedNewElement" />
         <item itemvalue="JUnit.CarListTest" />
-        <item itemvalue="JUnit.CarListTest.whenRemoveCar" />
       </list>
     </recent_temporary>
   </component>
