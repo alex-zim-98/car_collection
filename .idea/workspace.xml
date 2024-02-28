@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b868f581-1a5f-4b4a-bfa5-c54bdc46cc8f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarCollector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarHashSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarHashSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CarQueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CarQueueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarSet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +59,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CarQueueTest">
+  <component name="RunManager" selected="JUnit.CarCollectorTest">
     <configuration name="CarCollectorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MineCollections.test" />
       <extension name="coverage">
@@ -133,8 +138,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CarQueueTest" />
         <item itemvalue="JUnit.CarCollectorTest" />
+        <item itemvalue="JUnit.CarQueueTest" />
         <item itemvalue="JUnit.CarSetTest" />
         <item itemvalue="JUnit.CarSetTest.whenAddedNewElement" />
         <item itemvalue="JUnit.CarListTest" />

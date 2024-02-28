@@ -1,7 +1,7 @@
 package org.example;
 
-public interface CarQueue extends CarCollector {
-    boolean add(Car car);
-    Car peek();
-    Car poll();
+public interface CarQueue<T> extends CarCollector<T> {
+    boolean add(T car);
+    T peek();
+    T poll();
 }

@@ -6,12 +6,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CarSetTest {
-    CarSet carSet;
+    CarSet<Car> carSet;
     Car car;
 
     @Before
     public void setUp() throws Exception {
-        carSet = new CarHashSet();
+        carSet = new CarHashSet<>();
         car = new Car("Test", 1);
         for (int i = 0; i < 100; i++) {
             carSet.add(new Car("Brand"+i, i));

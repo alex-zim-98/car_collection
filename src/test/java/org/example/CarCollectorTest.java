@@ -6,11 +6,11 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CarCollectorTest {
-    CarCollector carCollector;
+    CarCollector<Car> carCollector;
 
     @Before
     public void setUp() throws Exception {
-        carCollector = new CarArrayList();
+        carCollector = new CarLinkedList<>();
         for (int i = 0; i < 100; i++) {
             carCollector.add(new Car("Brand" + i, i));
         }

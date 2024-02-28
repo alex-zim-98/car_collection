@@ -8,11 +8,11 @@ import java.util.Queue;
 import static org.junit.Assert.*;
 
 public class CarQueueTest {
-    CarQueue carQueue;
+    CarQueue<Car> carQueue;
 
     @Before
     public void setUp() throws Exception {
-        carQueue = new CarLinkedList();
+        carQueue = new CarLinkedList<>();
         for (int i = 0; i < 10; i++) {
             carQueue.add(new Car("Brand" + i, i));
         }
